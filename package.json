@@ -4,6 +4,7 @@
   "description": "weixin robot",
   "private": true,
   "dependencies": {
+    "dotenv": "^6.0.0",
     "egg": "^2.2.1",
     "egg-scripts": "^2.5.0"
   },
