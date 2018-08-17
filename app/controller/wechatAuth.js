@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 18:01:57
+ * @Last Modified time: 2018-08-17 18:49:25
  */
 'use strict';
 const crypto = require('crypto');
@@ -21,8 +21,8 @@ class WechatAuthController extends Controller {
       this.ctx.body = echostr;
       console.log('Confirm and send echo back');
     } else {
-      this.ctx.body('false');
-      console.log = 'Failed!';
+      this.ctx.body = 'false';
+      console.log('Failed!');
     }
   }
   sha1(str) {
