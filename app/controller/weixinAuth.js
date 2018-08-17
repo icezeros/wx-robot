@@ -2,10 +2,10 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 17:24:51
+ * @Last Modified time: 2018-08-17 17:32:02
  */
 'use strict';
-
+const crypto = require('crypto');
 const Controller = require('egg').Controller;
 
 class WeixinAuthController extends Controller {
