@@ -2,13 +2,13 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 17:35:05
+ * @Last Modified time: 2018-08-17 18:01:57
  */
 'use strict';
 const crypto = require('crypto');
 const Controller = require('egg').Controller;
 
-class WeixinAuthController extends Controller {
+class WechatAuthController extends Controller {
   async index() {
     const { ctx } = this;
     const query = ctx.query;
@@ -33,4 +33,4 @@ class WeixinAuthController extends Controller {
   }
 }
 
-module.exports = WeixinAuthController;
+module.exports = WechatAuthController;
