@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 18:37:13
+ * @Last Modified time: 2018-08-17 18:58:57
  */
 'use strict';
 const crypto = require('crypto');
@@ -23,6 +23,8 @@ WeixinAuthController.prototype.wechat = wechat(
   // const original = [ nonce, timestamp, ctx.app.config.wxToken ].sort().join('');
   console.log('query : ' + query);
   console.log('body : ' + body);
+  console.log('message : ' + message);
+  return message;
   // const scyptoString = this.sha1(original);
   // TODO
 });
