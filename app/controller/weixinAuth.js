@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 17:32:02
+ * @Last Modified time: 2018-08-17 17:35:05
  */
 'use strict';
 const crypto = require('crypto');
@@ -18,11 +18,11 @@ class WeixinAuthController extends Controller {
     console.log('Signature : ' + signature);
     const scyptoString = this.sha1(original);
     if (signature === scyptoString) {
-      this.ctx.body(echostr);
+      this.ctx.body = echostr;
       console.log('Confirm and send echo back');
     } else {
       this.ctx.body('false');
-      console.log('Failed!');
+      console.log = 'Failed!';
     }
   }
   sha1(str) {
