@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 18:58:57
+ * @Last Modified time: 2018-08-17 19:01:59
  */
 'use strict';
 const crypto = require('crypto');
@@ -23,8 +23,15 @@ WeixinAuthController.prototype.wechat = wechat(
   // const original = [ nonce, timestamp, ctx.app.config.wxToken ].sort().join('');
   console.log('query : ' + query);
   console.log('body : ' + body);
-  console.log('message : ' + message);
-  return message;
+  console.log('message : ' + JSON.stringify(message));
+  return [
+    {
+      title: '你来我家接我吧',
+      description: '这是女神与高富帅之间的对话',
+      picurl: 'http://nodeapi.cloudfoundry.com/qrcode.jpg',
+      url: 'http://nodeapi.cloudfoundry.com/',
+    },
+  ];
   // const scyptoString = this.sha1(original);
   // TODO
 });
