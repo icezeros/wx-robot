@@ -1,0 +1,28 @@
+{
+  "name": "wx-robot",
+  "version": "1.0.0",
+  "description": "weixin robot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icezeros/wx-robot.git"
+  },
+  "keywords": [
+    "weixin",
+    "robot"
+  ],
+  "author": "icezeros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icezeros/wx-robot/issues"
+  },
+  "homepage": "https://github.com/icezeros/wx-robot#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "weixin-robot": "^0.5.10"
+  }
+}
