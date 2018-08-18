@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-18 12:13:06
+ * @Last Modified time: 2018-08-18 12:15:09
  */
 'use strict';
 const crypto = require('crypto');
@@ -42,9 +42,9 @@ WeixinAuthController.prototype.wechat = wechat(
     // 明确告诉 HttpClient 以 JSON 格式处理返回的响应 body
     dataType: 'json',
   });
-  console.log('result : ' + result.data);
+  console.log('result : ' + result.data.results[0].values.text);
 
-  return JSON.stringify(result.data);
+  return result.data.results[0].values.text;
   // const scyptoString = this.sha1(original);
   // TODO
 });
