@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-17 19:01:59
+ * @Last Modified time: 2018-08-18 12:10:11
  */
 'use strict';
 const crypto = require('crypto');
@@ -19,11 +19,31 @@ WeixinAuthController.prototype.wechat = wechat(
 ).middleware(async (message, ctx) => {
   const query = ctx.query;
   const body = ctx.request.body;
-  // const { signature, echostr, timestamp, nonce } = query;
-  // const original = [ nonce, timestamp, ctx.app.config.wxToken ].sort().join('');
   console.log('query : ' + query);
   console.log('body : ' + body);
   console.log('message : ' + JSON.stringify(message));
+  const result = await ctx.curl('http://openapi.tuling123.com/openapi/api/v2', {
+    // 必须指定 method
+    method: 'POST',
+    // 通过 contentType 告诉 HttpClient 以 JSON 格式发送
+    contentType: 'json',
+    data: {
+      reqType: 0,
+      perception: {
+        inputText: {
+          text: message.Content,
+        },
+      },
+      userInfo: {
+        apiKey: 'ef1393cd4eab471f861a633153525182',
+        userId: '310679',
+      },
+    },
+    // 明确告诉 HttpClient 以 JSON 格式处理返回的响应 body
+    dataType: 'json',
+  });
+  console.log('result : ' + JSON.stringify(result));
+
   return [
     {
       title: '你来我家接我吧',
