@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-18 12:10:11
+ * @Last Modified time: 2018-08-18 12:11:39
  */
 'use strict';
 const crypto = require('crypto');
@@ -42,16 +42,9 @@ WeixinAuthController.prototype.wechat = wechat(
     // 明确告诉 HttpClient 以 JSON 格式处理返回的响应 body
     dataType: 'json',
   });
-  console.log('result : ' + JSON.stringify(result));
+  console.log('result : ' + result);
 
-  return [
-    {
-      title: '你来我家接我吧',
-      description: '这是女神与高富帅之间的对话',
-      picurl: 'http://nodeapi.cloudfoundry.com/qrcode.jpg',
-      url: 'http://nodeapi.cloudfoundry.com/',
-    },
-  ];
+  return JSON.stringify(result);
   // const scyptoString = this.sha1(original);
   // TODO
 });
