@@ -39,7 +39,7 @@ webot.set('test', {
 //
 
 // 接管消息请求
-webot.watch(app, { token: 'your1weixin2token', path: '/wechat' });
+webot.watch(app, { token: 'Secrypto2018', path: '/' });
 
 // 启动 Web 服务
 // 微信后台只允许 80 端口
