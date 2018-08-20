@@ -15,6 +15,28 @@ webot.set('subscribe', {
     return '欢迎订阅微信机器人';
   },
 });
+webot.set('robot', {
+  pattern(info) {
+    return true;
+  },
+  handler(info) {
+    info.reply = [
+      {
+        title: '消息1',
+        url: 'http://example.com/...',
+        picUrl: 'http://example.com/....a.jpg',
+        description: '对消息的描述出现在这里',
+      },
+      {
+        title: '消息2',
+        url: 'http://example.com/...',
+        picUrl: 'http://example.com/....a.jpg',
+        description: '对消息的描述出现在这里',
+      },
+    ];
+    return;
+  },
+});
 
 webot.set('test', {
   pattern: /^test/i,
