@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-21 14:55:26
+ * @Last Modified time: 2018-08-21 15:10:08
  */
 'use strict';
 const crypto = require('crypto');
@@ -19,10 +19,13 @@ WeixinAuthController.prototype.wechat = wechat(
 ).middleware(async (message, ctx) => {
   const query = ctx.query;
   const body = ctx.request.body;
-  console.log('query : ' + query);
-  console.log('body : ' + body);
-  console.log('weixin : ' + ctx.request.weixin);
+  // console.log('query : ' + query);
+  // console.log('body : ' + body);
+  // console.log('weixin : ' + ctx.request.weixin);
   console.log('message : ' + JSON.stringify(message));
+  if (message.MsgType === 'event' && message.Event === 'subscribe') {
+    return '欢迎关注微信公众号，我们可以聊天了';
+  }
   const result = await ctx.curl('http://openapi.tuling123.com/openapi/api/v2', {
     // 必须指定 method
     method: 'POST',
