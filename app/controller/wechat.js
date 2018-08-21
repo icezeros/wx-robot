@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-21 16:06:12
+ * @Last Modified time: 2018-08-21 16:07:42
  */
 'use strict';
 const crypto = require('crypto');
@@ -12,7 +12,7 @@ const wechat = require('co-wechat');
 class WeixinAuthController extends Controller {}
 WeixinAuthController.prototype.wechat = wechat(
   // 'Secrypto2018'
-  this.ctx.app.config.wxToken
+  this.app.config.wxToken
   // 当有前置中间件设置 ctx.wx_token 和 ctx.wx_cryptor 时，这里配置随意填写
   // token: 'Secrypto2018',
   // appid: 'wx5972cd3080b9aae9',
