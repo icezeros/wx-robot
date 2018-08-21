@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-21 15:10:08
+ * @Last Modified time: 2018-08-21 16:02:25
  */
 'use strict';
 const crypto = require('crypto');
@@ -17,11 +17,10 @@ WeixinAuthController.prototype.wechat = wechat(
   // appid: 'wx5972cd3080b9aae9',
   // encodingAESKey: '90c117e5800b2fb6ef7d29b24ccc6d7d',
 ).middleware(async (message, ctx) => {
+  console.log('this', this);
   const query = ctx.query;
   const body = ctx.request.body;
-  // console.log('query : ' + query);
-  // console.log('body : ' + body);
-  // console.log('weixin : ' + ctx.request.weixin);
+
   console.log('message : ' + JSON.stringify(message));
   if (message.MsgType === 'event' && message.Event === 'subscribe') {
     return '欢迎关注微信公众号，我们可以聊天了';
