@@ -2,7 +2,7 @@
  * @Author: icezeros
  * @Date: 2018-08-17 16:15:20
  * @Last Modified by: icezeros
- * @Last Modified time: 2018-08-18 12:15:09
+ * @Last Modified time: 2018-08-21 14:55:26
  */
 'use strict';
 const crypto = require('crypto');
@@ -21,6 +21,7 @@ WeixinAuthController.prototype.wechat = wechat(
   const body = ctx.request.body;
   console.log('query : ' + query);
   console.log('body : ' + body);
+  console.log('weixin : ' + ctx.request.weixin);
   console.log('message : ' + JSON.stringify(message));
   const result = await ctx.curl('http://openapi.tuling123.com/openapi/api/v2', {
     // 必须指定 method
