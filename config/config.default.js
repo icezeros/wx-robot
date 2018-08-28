@@ -13,6 +13,16 @@ module.exports = appInfo => {
   };
   // add your config here
   config.middleware = [];
+  config.mongoose = {
+    client: {
+      url: process.env.MONGO_URL,
+      options: {
+        replicaSet: false,
+        user: process.env.MONGO_USER,
+        pass: process.env.MONGO_PASSWORD,
+      }
+    }
+  }
 
   return config;
 };
